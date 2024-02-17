@@ -11,7 +11,7 @@ export default function Page() {
 			<section className="w-full py-12">
 				<div className="container flex flex-col items-center px-4 space-y-4 md:px-6 lg:space-y-8">
 					<div className="text-center">
-						<h1 className="text-4xl text-gradient font-bold tracking-tighter sm:text-5xl md:text-6xl/none">
+						<h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl/none">
 							About the Newsletter
 						</h1>
 						<p className="text-muted-foreground md:text-xl max-w-[55ch]">

@@ -111,7 +111,7 @@ function _Card(props: any) {
 		{ domTarget, eventOptions: { passive: false } }
 	);
 	return (
-		<Card className={props.className}>
+		<Card className={`${props.className} shadow-none border-none`}>
 			<animated.div
 				ref={domTarget}
 				className={"collection-card group"}
@@ -125,7 +125,10 @@ function _Card(props: any) {
 					rotateZ,
 				}}
 			>
-				<animated.div style={{ transform: wheelY.to(wheel) }} />
+				<animated.div
+					className={"peer"}
+					style={{ transform: wheelY.to(wheel) }}
+				/>
 				{props.title ? (
 					<>
 						<Link

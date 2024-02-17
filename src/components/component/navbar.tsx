@@ -7,11 +7,11 @@ import { Signup } from "./Signup";
 import NavLink from "./navLinks";
 export function Navbar() {
 	return (
-		<header className="border-b shadow sticky top-0 z-0 bg-card z-[100]">
+		<header className="border-b shadow sticky top-0 bg-card z-[100]">
 			<nav className="flex items-center justify-between h-[60px] container mx-auto">
 				<div className="flex items-center gap-2 px-6">
 					<Link
-						className="flex items-center text-2xl gap-2 font-semibold text-gradient"
+						className="flex items-center text-2xl gap-2 font-semibold"
 						href="#"
 					>
 						<Package2Icon className="h-6 w-6" />

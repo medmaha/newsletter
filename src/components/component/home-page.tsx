@@ -7,6 +7,7 @@ import Image from "next/image";
 import Categories from "./Categories";
 import Collections, { CollectionCard } from "./Collections";
 import { useEffect, useState } from "react";
+import WaterDropGrid from "./hero-grid";
 
 export function HomePage() {
 	const [loaded, toggleLoaded] = useState(false);
@@ -42,13 +43,13 @@ export function HomePage() {
 						</p>
 					</div>
 				</div> */}
-				<div className="container grid gap-6 px-4 md:px-6">
-					<div className="flex flex-col items-center justify-center space-y-4 text-center">
+				<div className="container overflow-clip mx-auto grid gap-6 px-4 md:px-6 relative min-h-[75svh]">
+					<div className="flex flex-col mx-auto h-max items-center mt-16 space-y-4 text-center z-20 bg-card dark:border-accent lg:px-8 shadow rounded-xl p-6 w-max">
 						<div className="space-y-2">
-							<h1 className="text-3xl font-bold tracking-tighter sm:text-5xl lg:text-6xl/none text-gradient">
+							<h1 className="text-3xl font-bold tracking-tighter sm:text-5xl lg:text-6xl/none">
 								The Web Platform Informer
 							</h1>
-							<p className="max-w-[600px] text-gray-500 md:text-xl md:mx-auto dark:text-gray-400">
+							<p className="text-muted-foreground md:text-xl md:mx-auto  max-w-[50ch] py-4">
 								Your weekly source for the latest web platform news, delivered
 								straight to your inbox. Stay informed, stay ahead.
 							</p>
@@ -56,11 +57,11 @@ export function HomePage() {
 						<div className="w-full max-w-sm space-y-2">
 							<form className="flex space-x-2">
 								<Input
-									className="max-w-lg flex-1"
+									className="max-w-lg flex-1 bg-card"
 									placeholder="Enter your email"
 									type="email"
 								/>
-								<Button type="submit" className="bg-gradient">
+								<Button type="submit" className="">
 									Subscribe
 								</Button>
 							</form>
@@ -71,6 +72,9 @@ export function HomePage() {
 								</Link>
 							</p>
 						</div>
+					</div>
+					<div className="absolute w-full h-full">
+						<WaterDropGrid />
 					</div>
 				</div>
 			</header>

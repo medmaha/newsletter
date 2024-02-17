@@ -19,7 +19,7 @@ export function Signup() {
 	return (
 		<Drawer>
 			<DrawerTrigger asChild>
-				<Button className="gap-1 bg-gradient">
+				<Button className="gap-1">
 					<UserPlusIcon className="h-4 w-4" />
 					<span>Subscribe</span>
 				</Button>
