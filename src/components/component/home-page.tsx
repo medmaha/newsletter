@@ -1,4 +1,4 @@
-"use client ";
+"use client";
 
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -6,9 +6,14 @@ import Link from "next/link";
 import Image from "next/image";
 import Categories from "./Categories";
 import Collections, { CollectionCard } from "./Collections";
-import Heading from "./hero-title";
+import { useEffect, useState } from "react";
 
 export function HomePage() {
+	const [loaded, toggleLoaded] = useState(false);
+
+	useEffect(() => {
+		toggleLoaded(true);
+	}, []);
 	return (
 		<>
 			<header className="pt-12 lg:pt-24 w-full mb-6">
@@ -82,18 +87,20 @@ export function HomePage() {
 						</ul>
 					</div>
 					<div className="flex justify-center">
-						<CollectionCard
-							className={"bg-transparent shadow-none border-0"}
-							img="/placeholder.svg"
-						>
-							<Image
-								alt="Hero"
-								className="aspect-video overflow-hidden rounded-xl object-cover object-center"
-								height="310"
-								src="/placeholder.svg"
-								width="550"
-							/>
-						</CollectionCard>
+						{loaded && (
+							<CollectionCard
+								className={"bg-transparent shadow-none border-0"}
+								img="/placeholder.svg"
+							>
+								<Image
+									alt="Hero"
+									className="aspect-video overflow-hidden rounded-xl object-cover object-center"
+									height="310"
+									src="/placeholder.svg"
+									width="550"
+								/>
+							</CollectionCard>
+						)}
 					</div>
 				</div>
 			</section>
@@ -150,18 +157,20 @@ export function HomePage() {
 						</div>
 					</div>
 					<div className="flex justify-center">
-						<CollectionCard
-							className={"bg-transparent shadow-none border-0"}
-							img="/placeholder.svg"
-						>
-							<Image
-								alt="Hero"
-								className="aspect-video overflow-hidden rounded-xl object-cover object-center"
-								height="310"
-								src="/placeholder.svg"
-								width="550"
-							/>
-						</CollectionCard>
+						{loaded && (
+							<CollectionCard
+								className={"bg-transparent shadow-none border-0"}
+								img="/placeholder.svg"
+							>
+								<Image
+									alt="Hero"
+									className="aspect-video overflow-hidden rounded-xl object-cover object-center"
+									height="310"
+									src="/placeholder.svg"
+									width="550"
+								/>
+							</CollectionCard>
+						)}
 					</div>
 				</div>
 			</section>
@@ -202,18 +211,20 @@ export function HomePage() {
 						</div>
 					</div>
 					<div className="flex justify-center">
-						<CollectionCard
-							className={"bg-transparent shadow-none border-0"}
-							img="/placeholder.svg"
-						>
-							<Image
-								alt="Hero"
-								className="aspect-video overflow-hidden rounded-xl object-cover object-center"
-								height="310"
-								src="/placeholder.svg"
-								width="550"
-							/>
-						</CollectionCard>
+						{loaded && (
+							<CollectionCard
+								className={"bg-transparent shadow-none border-0"}
+								img="/placeholder.svg"
+							>
+								<Image
+									alt="Hero"
+									className="aspect-video overflow-hidden rounded-xl object-cover object-center"
+									height="310"
+									src="/placeholder.svg"
+									width="550"
+								/>
+							</CollectionCard>
+						)}
 					</div>
 				</div>
 			</section>
