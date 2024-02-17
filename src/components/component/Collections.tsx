@@ -144,7 +144,7 @@ function _Card(props: any) {
 									height={250}
 									src={props.img}
 									alt={props.title}
-									className="mx-auto rounded-md"
+									className="mx-auto rounded-md shadow-lg border-4 border-accent/50"
 								/>
 							</div>
 

@@ -290,63 +290,6 @@ export function HomePage() {
 					</div>
 				</div>
 			</section>
-
-			<section className="border-t bg-card py-12 lg:py-24 xl:py-32">
-				<div className="container grid gap-6 px-4 md:px-6 lg:grid-cols-3 lg:gap-8">
-					<div className="space-y-2">
-						<Link className="text-2xl font-bold italic" href="#">
-							Informer
-						</Link>
-						<p className="text-sm text-gray-500 dark:text-gray-400">
-							A weekly newsletter with handpicked articles, tools, and resources
-							for the modern developer.
-						</p>
-					</div>
-					<nav className="space-y-2 text-center flex flex-col gap-1 lg:text-left">
-						<Link className="text-sm font-medium" href="#">
-							About
-						</Link>
-						<Link className="text-sm font-medium" href="#">
-							Contact
-						</Link>
-						<Link className="text-sm font-medium" href="#">
-							Archive
-						</Link>
-					</nav>
-					<div className="space-y-2 text-right lg:text-left">
-						<p className="text-sm font-medium">Connect with us</p>
-						<div className="flex justify-center space-x-2 lg:justify-start">
-							<Link className="w-4 h-4 rounded-full overflow-hidden" href="#">
-								<Image
-									alt="Social"
-									className="aspect-square object-cover"
-									height="32"
-									src="/placeholder.svg"
-									width="32"
-								/>
-							</Link>
-							<Link className="w-4 h-4 rounded-full overflow-hidden" href="#">
-								<Image
-									alt="Social"
-									className="aspect-square object-cover"
-									height="32"
-									src="/placeholder.svg"
-									width="32"
-								/>
-							</Link>
-							<Link className="w-4 h-4 rounded-full overflow-hidden" href="#">
-								<Image
-									alt="Social"
-									className="aspect-square object-cover"
-									height="32"
-									src="/placeholder.svg"
-									width="32"
-								/>
-							</Link>
-						</div>
-					</div>
-				</div>
-			</section>
 		</>
 	);
 }

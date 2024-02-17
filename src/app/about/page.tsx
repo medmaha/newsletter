@@ -24,10 +24,10 @@ export default function Page() {
 			<section className="w-full py-12">
 				<div className="container grid gap-12 px-4 text-center md:grid-cols-2 md:px-6 lg:gap-24">
 					<div className="flex flex-col justify-center space-y-4">
-						<h2 className="text-3xl text-left font-bold tracking-tighter sm:text-4xl">
+						<h2 className="text-2xl text-left font-bold tracking-tighter">
 							Our Mission
 						</h2>
-						<p className="max-w-prose text-left md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed text-muted-foreground">
+						<p className="max-w-prose text-left text-sm lg:text-base/relaxed text-muted-foreground">
 							Our mission is to curate valuable content for our subscribers,
 							keeping them informed, inspired, and ahead of the curve. Each
 							newsletter edition delivers high-quality articles, insightful
@@ -35,7 +35,7 @@ export default function Page() {
 						</p>
 					</div>
 					<div className="grid gap-4">
-						<h2 className="text-3xl text-left font-bold tracking-tighter sm:text-4xl">
+						<h2 className="text-2xl text-left font-bold tracking-tighter">
 							Meet the Team
 						</h2>
 						<div className="grid md:grid-cols-2 gap-4">
@@ -134,15 +134,15 @@ export default function Page() {
 			<section className="w-full py-12">
 				<div className="container grid gap-12 px-4 md:grid-cols-2 md:px-6 lg:gap-24">
 					<div className="space-y-4">
-						<h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+						<h2 className="text-2xl text-left font-bold tracking-tighter">
 							What Subscribers Say
 						</h2>
 						<div className="space-y-4">
-							<blockquote className="text-lg text-gray-500 md:text-xl dark:text-gray-400">
+							<blockquote className="text-muted-foreground text-sm md:text-base">
 								I look forward to the newsletter every week. It always has
 								interesting articles and the editor&apos;s picks are spot on.
 							</blockquote>
-							<blockquote className="text-lg text-gray-500 md:text-xl dark:text-gray-400">
+							<blockquote className="text-muted-foreground text-sm md:text-base">
 								The newsletter has become an invaluable resource for me. I often
 								find gems that I wouldn&apos;t have come across otherwise.
 							</blockquote>
@@ -193,7 +193,7 @@ export default function Page() {
 				<div className="container px-4 md:px-6">
 					<div className="flex flex-col items-center space-y-4 text-center">
 						<div className="space-y-2">
-							<h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl/none">
+							<h2 className="text-2xl text-left font-bold tracking-tighter">
 								Newsletter Archives
 							</h2>
 							<p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
@@ -234,7 +234,7 @@ export default function Page() {
 				<div className="container px-4 md:px-6">
 					<div className="flex flex-col items-center space-y-4 text-center">
 						<div className="space-y-2">
-							<h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl/none">
+							<h2 className="text-2xl text-left font-bold tracking-tighter">
 								Contact Us
 							</h2>
 							<p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">

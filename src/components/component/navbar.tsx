@@ -19,7 +19,7 @@ export function Navbar({ theme }: any) {
 					<div className="text-center md:text-left flex-1">
 						<Link
 							className="flex items-center text-2xl gap-2 font-semibold"
-							href="#"
+							href="/"
 						>
 							<Package2Icon className="h-6 w-6" />
 							<span className="font-extrabold italic">Informer</span>
@@ -27,15 +27,8 @@ export function Navbar({ theme }: any) {
 					</div>
 				</div>
 				<div className="lg:flex h-full items-center gap-2 justify-end hidden">
-					{/* <form action="" className="">
-						<Input placeholder="Search" className="md:w-[350px]" />
-					</form> */}
-
-					{/* <Button className="ml-auto h-8 w-8" size="icon" variant="outline">
-						<BellIcon className="h-4 w-4" />
-						<span className="sr-only">Toggle notifications</span>
-					</Button> */}
 					<NavLink href={"/"}>Home</NavLink>
+					<NavLink href={"/features"}>Features</NavLink>
 
 					<NavLink href={"/about"}>About</NavLink>
 					<NavLink href={"/sponsors"}>Sponsors</NavLink>
