@@ -45,6 +45,22 @@ export default function Collections() {
 }
 
 export function CollectionCard(props: any) {
+	const [loaded, toggleLoaded] = useState(false);
+	useEffect(() => {
+		toggleLoaded(true);
+	}, []);
+
+	if (!loaded) {
+		return (
+			<div
+				className="w-full min-h-[250px] bg-accent border shadow"
+				{...props}
+			/>
+		);
+	}
+	return <_Card {...props} />;
+}
+function _Card(props: any) {
 	const domTarget = useRef(null);
 	const [{ x, y, rotateX, rotateY, rotateZ, zoom, scale }, api] = useSpring(
 		() => ({
