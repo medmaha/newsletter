@@ -16,7 +16,7 @@ export function HomePage() {
 	}, []);
 	return (
 		<>
-			<header className="pt-12 lg:pt-24 w-full mb-6">
+			<header className="py-12 full mb-6">
 				{/* <div className="grid gap-4 items-center justify-center">
 					<h1 className="text-3xl text-gradient font-bold tracking-tighter sm:text-6xl/none text-center">
 						The Informed Developer
@@ -45,7 +45,7 @@ export function HomePage() {
 				<div className="container grid gap-6 px-4 md:px-6">
 					<div className="flex flex-col items-center justify-center space-y-4 text-center">
 						<div className="space-y-2">
-							<h1 className="text-3xl font-bold tracking-tighter sm:text-5xl lg:text-6xl text-gradient">
+							<h1 className="text-3xl font-bold tracking-tighter sm:text-5xl lg:text-6xl/none text-gradient">
 								The Web Platform Informer
 							</h1>
 							<p className="max-w-[600px] text-gray-500 md:text-xl md:mx-auto dark:text-gray-400">

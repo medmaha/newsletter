@@ -2,17 +2,19 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 export default function Page() {
 	return (
-		<main className="w-full py-6 space-y-6">
+		<div className="w-full py-6 space-y-6">
 			<section className="w-full py-12">
 				<div className="container flex flex-col items-center px-4 space-y-4 md:px-6 lg:space-y-8">
 					<div className="text-center">
-						<h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl/none">
+						<h1 className="text-4xl text-gradient font-bold tracking-tighter sm:text-5xl md:text-6xl/none">
 							About the Newsletter
 						</h1>
-						<p className="max-w-[800px] text-gray-500 md:text-xl dark:text-gray-400">
+						<p className="text-muted-foreground md:text-xl max-w-[55ch]">
 							Learn more about our mission, our team, and the value we deliver
 							with every edition of our newsletter.
 						</p>
@@ -22,64 +24,106 @@ export default function Page() {
 			<section className="w-full py-12">
 				<div className="container grid gap-12 px-4 text-center md:grid-cols-2 md:px-6 lg:gap-24">
 					<div className="flex flex-col justify-center space-y-4">
-						<h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+						<h2 className="text-3xl text-left font-bold tracking-tighter sm:text-4xl">
 							Our Mission
 						</h2>
-						<p className="max-w-prose text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-							We are dedicated to curating the most valuable and insightful
-							content for our subscribers. Our mission is to keep our
-							subscribers informed, inspired, and ahead of the curve. Each
-							edition of our newsletter is carefully crafted to deliver
-							high-quality articles, thought-provoking insights, and practical
-							tips. We aim to be the go-to source for knowledge and expertise in
-							our industry, providing our subscribers with the information they
-							need to excel in their professional lives.
+						<p className="max-w-prose text-left md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed text-muted-foreground">
+							Our mission is to curate valuable content for our subscribers,
+							keeping them informed, inspired, and ahead of the curve. Each
+							newsletter edition delivers high-quality articles, insightful
+							insights, and practical tips to excel in their professional lives.
 						</p>
 					</div>
 					<div className="grid gap-4">
-						<h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+						<h2 className="text-3xl text-left font-bold tracking-tighter sm:text-4xl">
 							Meet the Team
 						</h2>
-						<div className="grid gap-4">
+						<div className="grid md:grid-cols-2 gap-4">
 							<div className="flex items-center space-x-4">
-								<div className="w-12 h-12 overflow-hidden rounded-full">
-									<img
+								<div className="w-9 h-9 overflow-hidden rounded-full">
+									<Image
 										alt="Alice Johnson"
-										className="rounded-full"
-										height="48"
-										src="/placeholder.svg"
+										className="border rounded-full"
+										height="36"
+										src="/placeholder-user.jpg"
 										style={{
-											aspectRatio: "48/48",
+											aspectRatio: "36/36",
 											objectFit: "cover",
 										}}
 										width="48"
 									/>
 								</div>
-								<div className="space-y-1">
-									<h3 className="text-xl font-semibold">Alice Johnson</h3>
-									<p className="text-sm text-gray-500 dark:text-gray-400">
+								<div className="space-y-0.5">
+									<h3 className="text-xl font-semibold">Bob Smith</h3>
+									<p className="text-sm text-left text-muted-foreground">
+										Lead Writer
+									</p>
+								</div>
+							</div>
+							<div className="flex items-center space-x-4">
+								<div className="w-9 h-9 overflow-hidden rounded-full">
+									<Image
+										alt="Alice Johnson"
+										className="border rounded-full"
+										height="36"
+										src="/placeholder-user.jpg"
+										style={{
+											aspectRatio: "36/36",
+											objectFit: "cover",
+										}}
+										width="48"
+									/>
+								</div>
+								<div className="space-y-0.5">
+									<h3 className="text-xl text-left font-semibold">
+										Alice Johnson
+									</h3>
+									<p className="text-sm text-left text-muted-foreground">
 										Editor-in-Chief
 									</p>
 								</div>
 							</div>
 							<div className="flex items-center space-x-4">
-								<div className="w-12 h-12 overflow-hidden rounded-full">
-									<img
-										alt="Bob Smith"
-										className="rounded-full"
-										height="48"
-										src="/placeholder.svg"
+								<div className="w-9 h-9 overflow-hidden rounded-full">
+									<Image
+										alt="Alice Johnson"
+										className="border rounded-full"
+										height="36"
+										src="/placeholder-user.jpg"
 										style={{
-											aspectRatio: "48/48",
+											aspectRatio: "36/36",
 											objectFit: "cover",
 										}}
 										width="48"
 									/>
 								</div>
-								<div className="space-y-1">
+								<div className="space-y-0.5">
 									<h3 className="text-xl font-semibold">Bob Smith</h3>
-									<p className="text-sm text-gray-500 dark:text-gray-400">
+									<p className="text-sm text-left text-muted-foreground">
 										Lead Writer
+									</p>
+								</div>
+							</div>
+							<div className="flex items-center space-x-4">
+								<div className="w-9 h-9 overflow-hidden rounded-full">
+									<Image
+										alt="Alice Johnson"
+										className="border rounded-full"
+										height="36"
+										src="/placeholder-user.jpg"
+										style={{
+											aspectRatio: "36/36",
+											objectFit: "cover",
+										}}
+										width="48"
+									/>
+								</div>
+								<div className="space-y-0.5">
+									<h3 className="text-xl text-left font-semibold">
+										Alice Johnson
+									</h3>
+									<p className="text-sm text-left text-muted-foreground">
+										Editor-in-Chief
 									</p>
 								</div>
 							</div>
@@ -105,31 +149,43 @@ export default function Page() {
 						</div>
 					</div>
 					<div className="flex items-center justify-center">
-						<form className="grid gap-4 md:gap-8">
-							<h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
-								Subscribe to Our Newsletter
-							</h2>
-							<div className="flex flex-col gap-2 md:flex-row md:items-center md:gap-4">
-								<Label className="w-full max-w-xs" htmlFor="name">
-									Your Name
-								</Label>
-								<Input id="name" placeholder="Enter your name" required />
-							</div>
-							<div className="flex flex-col gap-2 md:flex-row md:items-center md:gap-4">
-								<Label className="w-full max-w-xs" htmlFor="email">
-									Email
-								</Label>
-								<Input
-									id="email"
-									placeholder="Enter your email"
-									required
-									type="email"
-								/>
-							</div>
-							<Button className="w-full md:w-auto" type="submit">
-								Subscribe
-							</Button>
-						</form>
+						<Card className="w-max">
+							<CardHeader>
+								<h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+									Subscribe to Our Newsletter
+								</h2>
+							</CardHeader>
+							<CardContent>
+								<form className="grid gap-4 md:gap-8">
+									<div className="grid gap-1">
+										<Label
+											className="w-full max-w-xs font-semibold"
+											htmlFor="name"
+										>
+											Your Name
+										</Label>
+										<Input id="name" placeholder="Enter your name" required />
+									</div>
+									<div className="gap-1 grid">
+										<Label
+											className="w-full max-w-xs font-semibold"
+											htmlFor="email"
+										>
+											Email
+										</Label>
+										<Input
+											id="email"
+											placeholder="Enter your email"
+											required
+											type="email"
+										/>
+									</div>
+									<Button className="w-full md:w-auto" type="submit">
+										Subscribe
+									</Button>
+								</form>
+							</CardContent>
+						</Card>
 					</div>
 				</div>
 			</section>
@@ -198,7 +254,7 @@ export default function Page() {
 					</div>
 				</div>
 			</section>
-		</main>
+		</div>
 	);
 }
 
