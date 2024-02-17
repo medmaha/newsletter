@@ -66,11 +66,11 @@
 		will-change: transform;
 		overflow: hidden;
 		touch-action: none;
-		@apply bg-card shadow border;
+		@apply shadow border bg-accent/40;
 	}
 
 	.collection-card:hover {
-		@apply bg-card/50;
+		@apply bg-accent/50;
 	}
 
 	.collection-card .img {

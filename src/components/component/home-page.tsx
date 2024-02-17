@@ -44,7 +44,7 @@ export function HomePage() {
 					</div>
 				</div> */}
 				<div className="container overflow-clip mx-auto grid gap-6 px-4 md:px-6 relative min-h-[75svh]">
-					<div className="flex flex-col mx-auto h-max items-center mt-16 space-y-4 text-center z-20 bg-card dark:border-accent lg:px-8 shadow rounded-xl p-6 w-max">
+					<div className="flex flex-col mx-auto h-max items-center mt-16 space-y-4 text-center z-20 bg-card dark:border-accent lg:px-8 shadow rounded-xl p-6 md:w-max">
 						<div className="space-y-2">
 							<h1 className="text-3xl font-bold tracking-tighter sm:text-5xl lg:text-6xl/none">
 								The Web Platform Informer
@@ -78,9 +78,8 @@ export function HomePage() {
 					</div>
 				</div>
 			</header>
-			<section className="py-6 w-full pt-12">
+			<section className="p-8 w-full pt-12">
 				<Categories />
-
 				<Collections />
 			</section>
 			<section className="border-t border-b py-12 lg:py-24 xl:py-32">

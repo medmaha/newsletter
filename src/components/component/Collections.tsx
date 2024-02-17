@@ -26,7 +26,9 @@ export default function Collections() {
 
 	return (
 		<div
-			className={"grid grid-cols-3 gap-6 f-full items-center container mx-auto"}
+			className={
+				"grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10 f-full items-center container mx-auto pb-16"
+			}
 		>
 			{loaded &&
 				data.map((item) => <CollectionCard key={item.title} {...item} />)}
@@ -35,7 +37,7 @@ export default function Collections() {
 			{!loaded &&
 				data.map((item) => (
 					<div
-						className="bg-accent border shadow w-full min-h-[250px]"
+						className="bg-accent border-2 shadow w-full min-h-[250px]"
 						key={item.title}
 						{...item}
 					/>
@@ -51,12 +53,7 @@ export function CollectionCard(props: any) {
 	}, []);
 
 	if (!loaded) {
-		return (
-			<div
-				className="w-full min-h-[250px] bg-accent border shadow"
-				{...props}
-			/>
-		);
+		return <div className="w-full bg-accent border shadow" {...props} />;
 	}
 	return <_Card {...props} />;
 }
@@ -131,10 +128,7 @@ function _Card(props: any) {
 				/>
 				{props.title ? (
 					<>
-						<Link
-							href={"/"}
-							className="z-10 absolute cursor-pointer right-2 top-2 "
-						>
+						<Link href={"/"} className="float-right m-2 mb-0">
 							<Button
 								size={"icon"}
 								variant={"secondary"}
@@ -143,8 +137,8 @@ function _Card(props: any) {
 								<ArrowUpRightFromSquare className="w-4 h-4" />
 							</Button>
 						</Link>
-						<CardContent className="min-w-full min-h-[300px] z-30 p-4 flex flex-col rounded-lg relative">
-							<div className="flex items-center min-h-[350px] flex-1">
+						<CardContent className="min-w-full min-h-[250px] z-30 p-4 flex flex-col rounded-lg relative">
+							<div className="flex items-center min-h-[250px] flex-1">
 								<Image
 									width={250}
 									height={250}

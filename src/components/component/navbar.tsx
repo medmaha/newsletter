@@ -2,23 +2,31 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "../ui/input";
 import Login from "./Login";
-import { UserPlusIcon } from "lucide-react";
+import { Menu, Moon, Sun, UserPlusIcon } from "lucide-react";
 import { Signup } from "./Signup";
 import NavLink from "./navLinks";
-export function Navbar() {
+import ThemeButton from "./ThemeButton";
+export function Navbar({ theme }: any) {
 	return (
 		<header className="border-b shadow sticky top-0 bg-card z-[100]">
 			<nav className="flex items-center justify-between h-[60px] container mx-auto">
-				<div className="flex items-center gap-2 px-6">
-					<Link
-						className="flex items-center text-2xl gap-2 font-semibold"
-						href="#"
-					>
-						<Package2Icon className="h-6 w-6" />
-						<span className="font-extrabold italic">Informer</span>
-					</Link>
+				<div className="lg:hidden">
+					<Button variant={"outline"} size={"icon"}>
+						<Menu />
+					</Button>
 				</div>
-				<div className="flex h-full items-center gap-2 justify-end">
+				<div className="flex items-center gap-4 px-6">
+					<div className="text-center md:text-left flex-1">
+						<Link
+							className="flex items-center text-2xl gap-2 font-semibold"
+							href="#"
+						>
+							<Package2Icon className="h-6 w-6" />
+							<span className="font-extrabold italic">Informer</span>
+						</Link>
+					</div>
+				</div>
+				<div className="lg:flex h-full items-center gap-2 justify-end hidden">
 					{/* <form action="" className="">
 						<Input placeholder="Search" className="md:w-[350px]" />
 					</form> */}
@@ -32,8 +40,9 @@ export function Navbar() {
 					<NavLink href={"/about"}>About</NavLink>
 					<NavLink href={"/sponsors"}>Sponsors</NavLink>
 				</div>
-				<div className="flex h-full items-center gap-4 justify-end">
-					<div className="flex items-center gap-2">
+				<div className="h-full flex items-center gap-2 justify-end ">
+					<ThemeButton theme={theme} />
+					<div className="md:flex items-center gap-2 hidden">
 						<Login />
 						<Signup />
 					</div>

@@ -21,7 +21,7 @@ export function Signup() {
 			<DrawerTrigger asChild>
 				<Button className="gap-1">
 					<UserPlusIcon className="h-4 w-4" />
-					<span>Subscribe</span>
+					<span>Join</span>
 				</Button>
 			</DrawerTrigger>
 			<DrawerContent>

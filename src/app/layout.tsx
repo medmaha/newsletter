@@ -5,6 +5,7 @@ import { Navbar } from "@/components/component/navbar";
 import { Suspense } from "react";
 import { Loader2 } from "lucide-react";
 import Link from "next/link";
+import { cookies } from "next/headers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,14 +19,21 @@ export default function RootLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
+	const theme = cookies().get("theme")?.value || ("dark" as "dark" | "light");
 	return (
-		<html lang="en" className="dark">
+		<html lang="en" className={`${theme} transition-all`}>
 			<body className={inter.className}>
-				<Navbar />
+				<Navbar theme={theme} />
 				<main className="p-2 bg-slate-50_ text-accent-foreground">
-					<Suspense fallback={<Loading />}>{children}</Suspense>
+					<Suspense fallback={<Loading />}>
+						{children}
+						{/* <Loading /> */}
+					</Suspense>
 				</main>
-				<footer className="flex items-center h-14 px-4 border-t bg-secondary">
+				<footer className="flex items-center h-14 px-4 border-t bg-secondary justify-between">
+					<p className="text-muted-foreground text-sm">
+						&copy; Copyright {new Date().getFullYear()} Informer Co
+					</p>
 					<div className="ml-auto flex items-center gap-4">
 						<Link
 							className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary"
@@ -53,7 +61,7 @@ function Loading() {
 		<div className="w-full h-[calc(100svh-78px)] flex items-center justify-center text-primary">
 			<Loader2
 				strokeWidth={5}
-				className="animate-spin duration-1000 delay-75"
+				className="animate-spin duration-1000"
 				width={64}
 				height={64}
 			/>

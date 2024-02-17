@@ -15,7 +15,7 @@ export default function Login() {
 	return (
 		<Dialog>
 			<DialogTrigger asChild>
-				<Button variant="link" className="text-lg">
+				<Button variant="link" className="lg:text-lg">
 					Login
 				</Button>
 			</DialogTrigger>
