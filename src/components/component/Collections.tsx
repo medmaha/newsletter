@@ -28,8 +28,10 @@ export default function Collections() {
 		<div
 			className={"grid grid-cols-3 gap-6 f-full items-center container mx-auto"}
 		>
-			{loaded && data.map((item) => <_Card key={item.title} {...item} />)}
-			{loaded && data.map((item) => <_Card key={item.title} {...item} />)}
+			{loaded &&
+				data.map((item) => <CollectionCard key={item.title} {...item} />)}
+			{loaded &&
+				data.map((item) => <CollectionCard key={item.title} {...item} />)}
 			{!loaded &&
 				data.map((item) => (
 					<div
@@ -42,7 +44,7 @@ export default function Collections() {
 	);
 }
 
-function _Card(props: any) {
+export function CollectionCard(props: any) {
 	const domTarget = useRef(null);
 	const [{ x, y, rotateX, rotateY, rotateZ, zoom, scale }, api] = useSpring(
 		() => ({
@@ -53,7 +55,7 @@ function _Card(props: any) {
 			zoom: 0,
 			x: 0,
 			y: 0,
-			config: { mass: 5, tension: 350, friction: 40 },
+			config: { mass: 5, tension: 350, friction: 30 },
 		})
 	);
 
@@ -67,7 +69,7 @@ function _Card(props: any) {
 	const wheel = (y: number) => {
 		const imgHeight = window.innerWidth * 0.3 - 20;
 		return `translateY(${
-			-imgHeight * (y < 0 ? 5 : 1) - (y % (imgHeight * 5))
+			-imgHeight * (y < 0 ? 4 : 1) - (y % (imgHeight * 4))
 		}px`;
 	};
 
@@ -75,7 +77,7 @@ function _Card(props: any) {
 		{
 			// onDrag: ({ active, offset: [x, y] }: any) =>
 			// 	api({ x, y, rotateX: 0, rotateY: 0, scale: active ? 1 : 1.1 }),
-			onPinch: ({ offset: [d, a] }: any) => api({ zoom: d / 200, rotateZ: a }),
+			onPinch: ({ offset: [d, a] }: any) => api({ zoom: d / 300, rotateZ: a }),
 			onMove: ({ xy: [px, py], dragging }: any) =>
 				!dragging &&
 				api({
@@ -93,7 +95,7 @@ function _Card(props: any) {
 		{ domTarget, eventOptions: { passive: false } }
 	);
 	return (
-		<Card>
+		<Card className={props.className}>
 			<animated.div
 				ref={domTarget}
 				className={"collection-card group"}
@@ -107,50 +109,58 @@ function _Card(props: any) {
 					rotateZ,
 				}}
 			>
-				<Link
-					href={"/"}
-					className="z-10 absolute cursor-pointer right-2 top-2 "
-				>
-					<Button
-						size={"icon"}
-						variant={"secondary"}
-						className="opacity-0  group-hover:border group-hover:opacity-100 transition"
-					>
-						<ArrowUpRightFromSquare className="w-4 h-4" />
-					</Button>
-				</Link>
 				<animated.div style={{ transform: wheelY.to(wheel) }} />
+				{props.title ? (
+					<>
+						<Link
+							href={"/"}
+							className="z-10 absolute cursor-pointer right-2 top-2 "
+						>
+							<Button
+								size={"icon"}
+								variant={"secondary"}
+								className="opacity-0  group-hover:border group-hover:opacity-100 transition"
+							>
+								<ArrowUpRightFromSquare className="w-4 h-4" />
+							</Button>
+						</Link>
+						<CardContent className="min-w-full min-h-[300px] z-30 p-4 flex flex-col rounded-lg relative">
+							<div className="flex items-center min-h-[350px] flex-1">
+								<Image
+									width={250}
+									height={250}
+									src={props.img}
+									alt={props.title}
+									className="mx-auto rounded-md"
+								/>
+							</div>
 
-				<CardContent className="min-w-full min-h-[300px] z-30 p-4 flex flex-col rounded-lg relative">
-					<div className="flex items-center min-h-[350px] flex-1">
-						<Image
-							width={250}
-							height={250}
-							src={props.img}
-							alt={props.title}
-							className="mx-auto rounded-md"
-						/>
-					</div>
-					<h3 className="font-semibold pt-2">{props.title}</h3>
-					<p
-						title={props.description}
-						className="text-sm text-muted-foreground line-clamp-1"
-					>
-						{props.description}
-					</p>
-					<div className="flex flex-wrap gap-2 pt-4">
-						{props.categories.map((cat: any) => {
-							return (
+							<>
+								<h3 className="font-semibold pt-2">{props.title}</h3>
 								<p
-									key={cat}
-									className="px-1 rounded-3xl border transition hover:bg-accent"
+									title={props.description}
+									className="text-sm text-muted-foreground line-clamp-1"
 								>
-									<small>{cat}</small>
+									{props.description}
 								</p>
-							);
-						})}
-					</div>
-				</CardContent>
+								<div className="flex flex-wrap gap-2 pt-4">
+									{props.categories.map((cat: any) => {
+										return (
+											<p
+												key={cat}
+												className="px-1 rounded-3xl border transition hover:bg-accent"
+											>
+												<small>{cat}</small>
+											</p>
+										);
+									})}
+								</div>
+							</>
+						</CardContent>
+					</>
+				) : (
+					<>{props.children}</>
+				)}
 			</animated.div>
 		</Card>
 	);

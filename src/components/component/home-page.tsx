@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import Categories from "./Categories";
-import Collections from "./Collections";
+import Collections, { CollectionCard } from "./Collections";
 import Heading from "./hero-title";
 
 export function HomePage() {
@@ -13,7 +13,7 @@ export function HomePage() {
 		<>
 			<header className="pt-12 lg:pt-24 w-full mb-6">
 				<div className="grid gap-4 items-center justify-center">
-					<h1 className="text-3xl font-bold tracking-tighter sm:text-6xl/none text-center">
+					<h1 className="text-3xl text-gradient font-bold tracking-tighter sm:text-6xl/none text-center">
 						The Informed Developer
 					</h1>
 					{/* <Heading></Heading> */}
@@ -28,7 +28,9 @@ export function HomePage() {
 								placeholder="Enter your email"
 								type="email"
 							/>
-							<Button size="lg">Subscribe</Button>
+							<Button size="lg" className="bg-gradient">
+								Subscribe
+							</Button>
 						</form>
 
 						<p className="text-sm text-muted-foreground text-center pt-2">
@@ -80,13 +82,18 @@ export function HomePage() {
 						</ul>
 					</div>
 					<div className="flex justify-center">
-						<Image
-							alt="Hero"
-							className="aspect-video overflow-hidden rounded-xl object-cover object-center"
-							height="310"
-							src="/placeholder.svg"
-							width="550"
-						/>
+						<CollectionCard
+							className={"bg-transparent shadow-none border-0"}
+							img="/placeholder.svg"
+						>
+							<Image
+								alt="Hero"
+								className="aspect-video overflow-hidden rounded-xl object-cover object-center"
+								height="310"
+								src="/placeholder.svg"
+								width="550"
+							/>
+						</CollectionCard>
 					</div>
 				</div>
 			</section>
@@ -109,6 +116,7 @@ export function HomePage() {
 									}}
 									width="64"
 								/>
+								<div className="flex justify-center"></div>
 								<div className="space-y-1.5">
 									<h3 className="font-semibold">Jane Cooper</h3>
 									<p className="text-sm text-gray-500 dark:text-gray-400">
@@ -142,13 +150,18 @@ export function HomePage() {
 						</div>
 					</div>
 					<div className="flex justify-center">
-						<Image
-							alt="Hero"
-							className="aspect-video overflow-hidden rounded-xl object-cover object-center"
-							height="310"
-							src="/placeholder.svg"
-							width="550"
-						/>
+						<CollectionCard
+							className={"bg-transparent shadow-none border-0"}
+							img="/placeholder.svg"
+						>
+							<Image
+								alt="Hero"
+								className="aspect-video overflow-hidden rounded-xl object-cover object-center"
+								height="310"
+								src="/placeholder.svg"
+								width="550"
+							/>
+						</CollectionCard>
 					</div>
 				</div>
 			</section>
@@ -189,13 +202,18 @@ export function HomePage() {
 						</div>
 					</div>
 					<div className="flex justify-center">
-						<Image
-							alt="Hero"
-							className="aspect-video overflow-hidden rounded-xl object-cover object-center"
-							height="310"
-							src="/placeholder.svg"
-							width="550"
-						/>
+						<CollectionCard
+							className={"bg-transparent shadow-none border-0"}
+							img="/placeholder.svg"
+						>
+							<Image
+								alt="Hero"
+								className="aspect-video overflow-hidden rounded-xl object-cover object-center"
+								height="310"
+								src="/placeholder.svg"
+								width="550"
+							/>
+						</CollectionCard>
 					</div>
 				</div>
 			</section>

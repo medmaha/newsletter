@@ -105,4 +105,21 @@
 		padding-right: 0.05em;
 		overflow: hidden;
 	}
+
+	.text-gradient {
+		background: linear-gradient(45deg, #3ec8fegit, blue);
+		/* Apply the gradient as a background clip */
+		-webkit-background-clip: text;
+		background-clip: text;
+		/* Set the text color to transparent to allow the gradient to show through */
+		color: transparent;
+		/* Add a fallback color */
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+	.bg-gradient {
+		@apply hover:text-white;
+		color: white;
+		background: linear-gradient(45deg, blue, #3ec8fe);
+	}
 }

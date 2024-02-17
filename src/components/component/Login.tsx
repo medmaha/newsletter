@@ -15,7 +15,9 @@ export default function Login() {
 	return (
 		<Dialog>
 			<DialogTrigger asChild>
-				<Button variant="link">Login</Button>
+				<Button variant="link" className="text-lg">
+					Login
+				</Button>
 			</DialogTrigger>
 			<DialogContent className="sm:max-w-[450px]">
 				<DialogHeader>

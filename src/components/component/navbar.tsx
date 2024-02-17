@@ -10,7 +10,7 @@ export function Navbar() {
 			<nav className="flex items-center justify-between h-[60px] container mx-auto">
 				<div className="flex items-center gap-2 px-6">
 					<Link
-						className="flex items-center text-2xl gap-2 font-semibold"
+						className="flex items-center text-2xl gap-2 font-semibold text-gradient"
 						href="#"
 					>
 						<Package2Icon className="h-6 w-6" />
@@ -18,9 +18,9 @@ export function Navbar() {
 					</Link>
 				</div>
 				<div className="flex h-full items-center gap-2 justify-end">
-					<form action="" className="">
+					{/* <form action="" className="">
 						<Input placeholder="Search" className="md:w-[350px]" />
-					</form>
+					</form> */}
 
 					{/* <Button className="ml-auto h-8 w-8" size="icon" variant="outline">
 						<BellIcon className="h-4 w-4" />

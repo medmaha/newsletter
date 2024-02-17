@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 export default function Categories() {
 	const searchParams = useSearchParams();
 
-	function getActiveClass(link: string) {
+	function getActiveClass(link: string | null) {
 		if (link === searchParams.get("c")) {
 			return "text-primary border";
 		}
@@ -19,8 +19,13 @@ export default function Categories() {
 			<Link href={"/?c=all"}>
 				<Button
 					size={"sm"}
-					variant={searchParams.get("c") === "all" ? "secondary" : "outline"}
-					className={cn("gap-1 rounded-3xl", getActiveClass("all"))}
+					variant={
+						(searchParams.get("c") || "all") === "all" ? "secondary" : "outline"
+					}
+					className={cn(
+						"gap-1 rounded-3xl",
+						getActiveClass(searchParams.get("c") ? "all" : null)
+					)}
 				>
 					<span>All</span>
 					<small>64</small>
