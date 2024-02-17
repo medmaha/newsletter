@@ -26,7 +26,7 @@ export function Navbar() {
 						<BellIcon className="h-4 w-4" />
 						<span className="sr-only">Toggle notifications</span>
 					</Button> */}
-					<Link href={"#"}>
+					<Link href={"/"}>
 						<Button variant="ghost">Home</Button>
 					</Link>
 
