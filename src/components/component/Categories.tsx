@@ -1,15 +1,26 @@
+"use client";
 import React from "react";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 export default function Categories() {
+	const searchParams = useSearchParams();
+
+	function getActiveClass(link: string) {
+		if (link === searchParams.get("c")) {
+			return "text-primary border";
+		}
+	}
+
 	return (
 		<div className="flex flex-wrap gap-2 w-full justify-center">
 			<Link href={"/?c=all"}>
 				<Button
 					size={"sm"}
-					variant={"secondary"}
-					className="gap-1 rounded-3xl border text-primary"
+					variant={searchParams.get("c") === "all" ? "secondary" : "outline"}
+					className={cn("gap-1 rounded-3xl", getActiveClass("all"))}
 				>
 					<span>All</span>
 					<small>64</small>
@@ -20,8 +31,15 @@ export default function Categories() {
 					<Button
 						key={item.label}
 						size={"sm"}
-						variant={"outline"}
-						className="gap-1 rounded-3xl hover:text-primary"
+						variant={
+							searchParams.get("c") === item.label.toLowerCase()
+								? "secondary"
+								: "outline"
+						}
+						className={cn(
+							"gap-1 rounded-3xl",
+							getActiveClass(item.label.toLowerCase())
+						)}
 					>
 						<span>{item.label}</span>
 						<small>{item.value}</small>

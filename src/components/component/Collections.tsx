@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Card, CardContent } from "../ui/card";
 import { Button } from "../ui/button";
 import { ArrowUpRightFromSquare } from "lucide-react";
+import Link from "next/link";
 
 // import styles from "./styles.module.css";
 
@@ -106,15 +107,20 @@ function _Card(props: any) {
 					rotateZ,
 				}}
 			>
+				<Link
+					href={"/"}
+					className="z-10 absolute cursor-pointer right-2 top-2 "
+				>
+					<Button
+						size={"icon"}
+						variant={"secondary"}
+						className="opacity-0  group-hover:border group-hover:opacity-100 transition"
+					>
+						<ArrowUpRightFromSquare className="w-4 h-4" />
+					</Button>
+				</Link>
 				<animated.div style={{ transform: wheelY.to(wheel) }} />
 
-				<Button
-					size={"icon"}
-					variant={"secondary"}
-					className="absolute z-10 cursor-pointer right-2 top-2 opacity-0  group-hover:border group-hover:opacity-100 transition"
-				>
-					<ArrowUpRightFromSquare className="w-4 h-4" />
-				</Button>
 				<CardContent className="min-w-full min-h-[300px] z-30 p-4 flex flex-col rounded-lg relative">
 					<div className="flex items-center min-h-[350px] flex-1">
 						<Image
@@ -122,7 +128,7 @@ function _Card(props: any) {
 							height={250}
 							src={props.img}
 							alt={props.title}
-							className="mx-auto"
+							className="mx-auto rounded-md"
 						/>
 					</div>
 					<h3 className="font-semibold pt-2">{props.title}</h3>
