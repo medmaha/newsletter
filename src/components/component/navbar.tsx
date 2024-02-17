@@ -4,6 +4,7 @@ import { Input } from "../ui/input";
 import Login from "./Login";
 import { UserPlusIcon } from "lucide-react";
 import { Signup } from "./Signup";
+import NavLink from "./navLinks";
 export function Navbar() {
 	return (
 		<header className="border-b shadow sticky top-0 z-0 bg-card z-[100]">
@@ -26,16 +27,10 @@ export function Navbar() {
 						<BellIcon className="h-4 w-4" />
 						<span className="sr-only">Toggle notifications</span>
 					</Button> */}
-					<Link href={"/"}>
-						<Button variant="ghost">Home</Button>
-					</Link>
+					<NavLink href={"/"}>Home</NavLink>
 
-					<Link href={"#"}>
-						<Button variant="ghost">About</Button>
-					</Link>
-					<Link href={"#"}>
-						<Button variant="ghost">Sponsors</Button>
-					</Link>
+					<NavLink href={"/about"}>About</NavLink>
+					<NavLink href={"/sponsors"}>Sponsors</NavLink>
 				</div>
 				<div className="flex h-full items-center gap-4 justify-end">
 					<div className="flex items-center gap-2">
