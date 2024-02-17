@@ -19,7 +19,9 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={inter.className}>
 				<Navbar />
-				<main>{children}</main>
+				<main className="p-2 bg-slate-50 text-accent-foreground">
+					{children}
+				</main>
 			</body>
 		</html>
 	);

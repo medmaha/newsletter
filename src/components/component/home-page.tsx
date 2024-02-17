@@ -4,21 +4,25 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import Categories from "./Categories";
+import Collections from "./Collections";
+import Heading from "./hero-title";
 
 export function HomePage() {
 	return (
-		<div className="bg-gray-50">
-			<section className="py-12 lg:py-24 xl:py-32 min-h-[calc(100svh-60px)]">
-				<div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 xl:gap-12">
-					<div className="space-y-4 mx-auto">
-						<h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none md:text-left text-center">
-							The Informed Developer
-						</h1>
-						<p className="text-gray-500 dark:text-gray-400 px-1 md:text-left text-center md:max-w-[65ch] mx-auto md:mx-0 pb-2 md:pb-0 max-w-[50ch]">
-							A weekly newsletter with handpicked articles, tools, and resources
-							for the modern developer.
-						</p>
-						<form className="flex md:justify-start justify-center space-x-2">
+		<>
+			<header className="pt-12 lg:pt-24 w-full mb-6">
+				<div className="grid gap-4 items-center justify-center">
+					<h1 className="text-3xl font-bold tracking-tighter sm:text-6xl/none text-center">
+						The Informed Developer
+					</h1>
+					{/* <Heading></Heading> */}
+					<p className="text-muted-foreground max-w-[60ch] mx-auto text-center">
+						A weekly newsletter with handpicked articles, tools, and resources
+						for the modern developer.
+					</p>
+					<div className="">
+						<form className="flex md:justify-center items-center space-x-2 pt-4">
 							<Input
 								className="max-w-sm flex-1 text-lg"
 								placeholder="Enter your email"
@@ -26,17 +30,18 @@ export function HomePage() {
 							/>
 							<Button size="lg">Subscribe</Button>
 						</form>
-					</div>
-					<div className="flex mx-auto justify-center md:justify-start lg:justify-center ">
-						<Image
-							alt="Hero"
-							className="aspect-video overflow-hidden rounded-xl object-cover object-center"
-							height="325"
-							src="/nl-hero.jpg"
-							width="600"
-						/>
+
+						<p className="text-sm text-muted-foreground text-center pt-2">
+							Join 2,100+ freelancers · Unsubscribe anytime
+						</p>
 					</div>
 				</div>
+			</header>
+			<section className="py-6 w-full pt-12">
+				<Categories />
+			</section>
+			<section className="py-6 w-full pt-4">
+				<Collections />
 			</section>
 			<section className="border-t border-b py-12 lg:py-24 xl:py-32">
 				<div className="container grid items-center gap-4 px-4 md:px-6 lg:grid-cols-2 lg:gap-12">
@@ -200,7 +205,7 @@ export function HomePage() {
 						<h2 className="text-3xl font-bold pb-1 tracking-tighter sm:text-4xl xl:text-5xl/none">
 							Get the latest updates
 						</h2>
-						<p className="max-w-[600px] text-gray-500 dark:text-gray-400">
+						<p className="max-w-[600px] text-gray-500 dark:text-gray-400 ">
 							Subscribe to our newsletter to stay informed about the latest
 							tools, trends, and tutorials in the world of web development.
 						</p>
@@ -281,7 +286,7 @@ export function HomePage() {
 					</div>
 				</div>
 			</section>
-		</div>
+		</>
 	);
 }
 
