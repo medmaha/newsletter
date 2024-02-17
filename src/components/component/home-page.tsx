@@ -80,8 +80,7 @@ export function HomePage() {
 			</header>
 			<section className="py-6 w-full pt-12">
 				<Categories />
-			</section>
-			<section className="py-6 w-full pt-4">
+
 				<Collections />
 			</section>
 			<section className="border-t border-b py-12 lg:py-24 xl:py-32">

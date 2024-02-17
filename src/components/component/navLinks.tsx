@@ -11,7 +11,7 @@ export default function NavLink({ href, children }: any) {
 
 	let route = "/" + (segment || "");
 	return (
-		<Link href={href} scroll={false}>
+		<Link href={href}>
 			<Button
 				className={`${
 					route === href ? "text-primary border  hover:text-primary/90" : ""

@@ -15,8 +15,8 @@ export default function Categories() {
 	}
 
 	return (
-		<div className="flex flex-wrap gap-2 w-full justify-center">
-			<Link href={"/?c=all"}>
+		<div className="flex flex-wrap gap-2 w-full justify-center sticky z-50 mb-16 top-[60px] py-2 bg-card">
+			<Link href={"/?c=all"} scroll={false}>
 				<Button
 					size={"sm"}
 					variant={
@@ -32,7 +32,11 @@ export default function Categories() {
 				</Button>
 			</Link>
 			{data.map((item) => (
-				<Link href={`/?c=${item.label.toLowerCase()}`} key={item.label}>
+				<Link
+					href={`/?c=${item.label.toLowerCase()}`}
+					key={item.label}
+					scroll={false}
+				>
 					<Button
 						key={item.label}
 						size={"sm"}
