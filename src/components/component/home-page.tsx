@@ -17,11 +17,10 @@ export function HomePage() {
 	return (
 		<>
 			<header className="pt-12 lg:pt-24 w-full mb-6">
-				<div className="grid gap-4 items-center justify-center">
+				{/* <div className="grid gap-4 items-center justify-center">
 					<h1 className="text-3xl text-gradient font-bold tracking-tighter sm:text-6xl/none text-center">
 						The Informed Developer
 					</h1>
-					{/* <Heading></Heading> */}
 					<p className="text-muted-foreground max-w-[60ch] mx-auto text-center">
 						A weekly newsletter with handpicked articles, tools, and resources
 						for the modern developer.
@@ -41,6 +40,37 @@ export function HomePage() {
 						<p className="text-sm text-muted-foreground text-center pt-2">
 							Join 2,100+ freelancers · Unsubscribe anytime
 						</p>
+					</div>
+				</div> */}
+				<div className="container grid gap-6 px-4 md:px-6">
+					<div className="flex flex-col items-center justify-center space-y-4 text-center">
+						<div className="space-y-2">
+							<h1 className="text-3xl font-bold tracking-tighter sm:text-5xl text-gradient">
+								The Web Platform Informer
+							</h1>
+							<p className="max-w-[600px] text-gray-500 md:text-xl md:mx-auto dark:text-gray-400">
+								Your weekly source for the latest web platform news, delivered
+								straight to your inbox. Stay informed, stay ahead.
+							</p>
+						</div>
+						<div className="w-full max-w-sm space-y-2">
+							<form className="flex space-x-2">
+								<Input
+									className="max-w-lg flex-1"
+									placeholder="Enter your email"
+									type="email"
+								/>
+								<Button type="submit" className="bg-gradient">
+									Subscribe
+								</Button>
+							</form>
+							<p className="text-xs text-muted-foreground">
+								Get the latest updates in your inbox every week. <br />
+								<Link className="underline underline-offset-2" href="#">
+									Terms & Conditions
+								</Link>
+							</p>
+						</div>
 					</div>
 				</div>
 			</header>
